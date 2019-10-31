@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import styled, {createGlobalStyle, Fragment} from "styled-components";
 import PageTemplate from './PageTemplate'
+import TodoInput from './TodoInput';
+import TodoItem from './TodoItem';
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -15,7 +17,12 @@ class App extends Component{
       <>
         <GlobalStyle/>
         <div>
-          <PageTemplate>안뇽하세요</PageTemplate>
+          <PageTemplate>
+            <TodoInput/>
+            <TodoItem done>아자아자아자</TodoItem>
+            <TodoItem>아자아자아자</TodoItem>
+            <TodoItem>아자아자아자</TodoItem>
+          </PageTemplate>
         </div>
       </>
     );
