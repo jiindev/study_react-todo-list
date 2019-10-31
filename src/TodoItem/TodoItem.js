@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled, {css} from 'styled-components';
 
 const TodoItemDiv=styled.div`
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -50,7 +50,10 @@ class TodoItem extends Component {
             <TodoItemDiv onClick={onToggle}>
                 <CheckBox type="checkbox" checked={done} readOnly/>
                 <TextContent done={done}>{children}</TextContent>
-                <DeleteBtn onClick={onRemove}>X</DeleteBtn>
+                <DeleteBtn onClick={(e)=>{
+                    onRemove();
+                    e.stopPropagation();
+                }}>Del</DeleteBtn>
             </TodoItemDiv>
         );
     }
